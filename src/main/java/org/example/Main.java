@@ -1,14 +1,15 @@
 package org.example;
+
 import java.util.Scanner;
 
 public class Main {
 
-    void main(String[] args){
+    void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("取引アプリを起動しました");
 
-        while(true) {
+        while (true) {
 
             System.out.println("1 : 取引の入力");
             System.out.println("2 : 取引一覧の表示");

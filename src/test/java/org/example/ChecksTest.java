@@ -1,6 +1,9 @@
 package org.example;
+
 import org.junit.jupiter.api.Test;
+
 import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -81,37 +84,37 @@ public class ChecksTest {
     //場中判定テスト
 
     @Test
-    void testMorningTradingHours(){
+    void testMorningTradingHours() {
         LocalDateTime dateTime = LocalDateTime.of(2026, 9, 9, 10, 0);
         assertTrue(Checks.isTradingHours(dateTime));
     }
 
     @Test
-    void testAfternoonTradingHours(){
+    void testAfternoonTradingHours() {
         LocalDateTime dateTime = LocalDateTime.of(2026, 9, 9, 14, 0);
         assertTrue(Checks.isTradingHours(dateTime));
     }
 
     @Test
-    void testOutsideTradingHours(){
+    void testOutsideTradingHours() {
         LocalDateTime dateTime = LocalDateTime.of(2026, 9, 9, 12, 0);
         assertFalse(Checks.isTradingHours(dateTime));
     }
 
     @Test
-    void testSaturday(){
+    void testSaturday() {
         LocalDateTime dateTime = LocalDateTime.of(2026, 9, 12, 10, 0);
         assertFalse(Checks.isTradingHours(dateTime));
     }
 
     @Test
-    void testSunday(){
+    void testSunday() {
         LocalDateTime dateTime = LocalDateTime.of(2026, 9, 13, 10, 0);
         assertFalse(Checks.isTradingHours(dateTime));
     }
 
     @Test
-    void testBoundaryTimes(){
+    void testBoundaryTimes() {
         LocalDateTime morningStart = LocalDateTime.of(2026, 9, 9, 9, 0);
         LocalDateTime morningEnd = LocalDateTime.of(2026, 9, 9, 11, 30);
         LocalDateTime afternoonStart = LocalDateTime.of(2026, 9, 9, 12, 30);

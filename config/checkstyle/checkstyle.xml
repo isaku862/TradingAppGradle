@@ -4,9 +4,166 @@
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
-    <module name="TreeWalker">
-        <module name="NeedBraces"/>
-        <module name="EmptyStatement"/>
+
+    <!-- タブ文字を禁止 -->
+    <module name="FileTabCharacter"/>
+
+    <!-- 1行120文字まで -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
     </module>
+
+    <module name="TreeWalker">
+
+        <!-- ========================= -->
+        <!-- 命名規則 -->
+        <!-- ========================= -->
+
+        <!-- クラス名：UpperCamelCase -->
+        <!-- 例：TradingApp、ChecksTest -->
+        <module name="TypeName"/>
+
+        <!-- メソッド名：lowerCamelCase -->
+        <!-- 例：getData、isTradingHours -->
+        <module name="MethodName"/>
+
+        <!-- フィールド名：lowerCamelCase -->
+        <module name="MemberName"/>
+
+        <!-- 引数名：lowerCamelCase -->
+        <module name="ParameterName"/>
+
+        <!-- ローカル変数名：lowerCamelCase -->
+        <module name="LocalVariableName"/>
+
+        <!-- 定数名：UPPER_CASE -->
+        <!-- 例：MAX_COUNT、START_TIME -->
+        <module name="ConstantName"/>
+
+
+        <!-- ========================= -->
+        <!-- コードの複雑さ -->
+        <!-- ========================= -->
+
+        <!-- 循環的複雑度10以下 -->
+        <module name="CyclomaticComplexity">
+            <property name="max" value="10"/>
+        </module>
+
+        <!-- if のネストは3階層まで -->
+        <module name="NestedIfDepth">
+            <property name="max" value="3"/>
+        </module>
+
+        <!-- try のネストは2階層まで -->
+        <module name="NestedTryDepth">
+            <property name="max" value="2"/>
+        </module>
+
+        <!-- 1メソッド80行まで -->
+        <module name="MethodLength">
+            <property name="max" value="80"/>
+        </module>
+
+        <!-- 引数は最大7個 -->
+        <module name="ParameterNumber">
+            <property name="max" value="7"/>
+        </module>
+
+
+        <!-- ========================= -->
+        <!-- 不要・冗長なコード -->
+        <!-- ========================= -->
+
+        <!-- 不要な括弧 -->
+        <module name="UnnecessaryParentheses"/>
+
+        <!-- 無意味な ; -->
+        <module name="EmptyStatement"/>
+
+        <!-- boolean式を無駄に複雑にしない -->
+        <module name="SimplifyBooleanExpression"/>
+
+        <!-- booleanを無駄なifでreturnしない -->
+        <module name="SimplifyBooleanReturn"/>
+
+        <!-- 式の途中で代入しない -->
+        <module name="InnerAssignment"/>
+
+        <!-- 1行に複数の処理を書かない -->
+        <module name="OneStatementPerLine"/>
+
+        <!-- 複数変数を一度に宣言しない -->
+        <module name="MultipleVariableDeclarations"/>
+
+
+        <!-- ========================= -->
+        <!-- if / for / while -->
+        <!-- ========================= -->
+
+        <!-- {} を必須 -->
+        <module name="NeedBraces"/>
+
+        <!-- { の位置 -->
+        <module name="LeftCurly"/>
+
+        <!-- } の位置 -->
+        <module name="RightCurly"/>
+
+
+        <!-- ========================= -->
+        <!-- switch -->
+        <!-- ========================= -->
+
+        <!-- switchにdefaultを要求 -->
+        <module name="MissingSwitchDefault"/>
+
+        <!-- caseから意図せず次のcaseへ落ちるのを防ぐ -->
+        <module name="FallThrough"/>
+
+
+        <!-- ========================= -->
+        <!-- 例外処理 -->
+        <!-- ========================= -->
+
+        <!-- 空のcatchを禁止 -->
+        <module name="EmptyCatchBlock"/>
+
+
+        <!-- ========================= -->
+        <!-- 空白・書式 -->
+        <!-- ========================= -->
+
+        <!-- 演算子などの前後に適切な空白 -->
+        <module name="WhitespaceAround"/>
+
+        <!-- カンマなどの後ろに空白 -->
+        <module name="WhitespaceAfter"/>
+
+        <!-- 不要な空白をチェック -->
+        <module name="NoWhitespaceBefore"/>
+
+        <!-- インデント -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+        </module>
+
+
+        <!-- ========================= -->
+        <!-- その他 -->
+        <!-- ========================= -->
+
+        <!-- 配列の [] の書き方 -->
+        <module name="ArrayTypeStyle"/>
+
+        <!-- 修飾子の順番 -->
+        <!-- public static final の順など -->
+        <module name="ModifierOrder"/>
+
+        <!-- 同じ修飾子を重複させない -->
+        <module name="RedundantModifier"/>
+
+    </module>
+
 </module>
 
