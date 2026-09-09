@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 
 public class Trade {
 
-    private LocalDateTime tradedDateTime;
-    private String symbol;
-    private String side;
-    private long quantity;
-    private double unitPrice;
+    private final LocalDateTime tradedDateTime;
+    private final String symbol;
+    private final String side;
+    private final long quantity;
+    private final double unitPrice;
 
     public Trade(LocalDateTime tradedDateTime, String symbol,
                  String side, long quantity, double unitPrice) {
