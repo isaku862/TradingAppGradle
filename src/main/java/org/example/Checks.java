@@ -45,12 +45,8 @@ public class Checks {
                 !time.isAfter(LocalTime.of(11, 30))) {
             return true;
         }
-        if (!time.isBefore(LocalTime.of(12, 30)) &&
-                !time.isAfter(LocalTime.of(15, 30))) {
-            return true;
-        }
-
-        return false;
+        return !time.isBefore(LocalTime.of(12, 30)) &&
+                !time.isAfter(LocalTime.of(15, 30));
     }
 
 
